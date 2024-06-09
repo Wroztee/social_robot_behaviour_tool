@@ -1,0 +1,698 @@
+{
+    "vision": {
+        "question" : "Does your robot need to see?",
+        "yes_nodes" : {
+            "Vision System" : {
+                "Camera" : {},
+                "Processing Unit" : {}
+            }
+        },
+        "no_nodes" : {},
+        "yes_next_question" : "object-recognition",
+        "no_next_question" : "movement"
+    },
+
+    "object-recognition": {
+        "question" : "Does it need to recognize objects?",
+        "yes_nodes" : {
+            "Vision System" : {
+                "Object Recognition System" : {
+                    "High Quality Camera" : {},
+                    "Powerful Processing Unit" : {}
+                }
+            }
+        },
+        "no_nodes" : {},
+        "yes_next_question" : "pretrained-object-recognition",
+        "no_next_question" : "face-recognition"
+    },
+
+    "pretrained-object-recognition": {
+        "question" : "Are you going to use a pretrained AI Object Recognition model?",
+        "yes_nodes" : {
+            "Object Recognition System" : {
+                "Pretrained AI Object Recognition Model" : {}
+            }
+        },
+        "no_nodes" : {
+            "Object Recognition System" : {
+                "AI Object Recognition Model" : {},
+                "Huge Image Dataset" : {},
+                "Powerful External GPU for Training" : {}
+            }
+        },
+        "yes_next_question" : "retrain-object-recognition",
+        "no_next_question" : "face-recognition"
+    },
+
+    "retrain-object-recognition": {
+        "question" : "Would you need to retrain the model for your application because it has biases?",
+        "yes_nodes" : {
+            "Object Recognition System" : {
+                "Huge Image Dataset" : {}
+            }
+        },
+        "no_nodes" : {},
+        "yes_next_question" : "face-recognition",
+        "no_next_question" : "face-recognition"
+    },
+
+    "face-recognition": {
+        "question" : "Does the visual system need to recognize faces?",
+        "yes_nodes" : {
+            "Vision System" : {
+                "Face Recognition System" : {
+                    "High Quality Camera" : {},
+                    "Powerful Processing Unit" : {}
+                }
+            }
+        },
+        "no_nodes" : {},
+        "yes_next_question" : "pretrained-face-recognition",
+        "no_next_question" : "movement"
+    },
+
+    "pretrained-face-recognition": {
+        "question" : "Are you going to use a pretrained AI Face Recognition model?",
+        "yes_nodes" : {
+            "Face Recognition System" : {
+                "Pretrained AI Face Recognition Model" : {}
+            }
+        },
+        "no_nodes" : {
+            "Face Recognition System" : {
+                "AI Face Recognition Model" : {},
+                "Huge Face Image Dataset" : {},
+                "Powerful External GPU for Training" : {}
+            }
+        },
+        "yes_next_question" : "movement",
+        "no_next_question" : "movement"
+    },
+
+    "movement": {
+        "question" : "Does your robot need to move?",
+        "yes_nodes" : {
+            "Locomotion System" : {}
+        },
+        "no_nodes" : {},
+        "yes_next_question" : "wheels-movement",
+        "no_next_question" : "object-manipulation"
+    },
+
+    "wheels-movement": {
+        "question" : "Will your robot use wheels to move?",
+        "yes_nodes" : {
+            "Locomotion System" : {
+                "Wheel System" : {
+                    "Wheels" : {},
+                    "Wheel Motors" : {},
+                    "Wheel Motor Controllers" : {},
+                    "Wheel Rotary Encoders" : {}
+                }
+            }
+        },
+        "no_nodes" : {},
+        "yes_next_question" : "navigation-system",
+        "no_next_question" : "track-movement"
+    },
+
+    "track-movement": {
+        "question" : "Will your robot use tracks to move?",
+        "yes_nodes" : {
+            "Locomotion System" : {
+                "Track System" : {
+                    "Tracks" : {},
+                    "Track Motors" : {},
+                    "Track Motor Controllers" : {},
+                    "Track Rotary Encoders" : {}
+                }
+            }
+        },
+        "no_nodes" : {},
+        "yes_next_question" : "navigation-system",
+        "no_next_question" : "leg-movement"
+    },
+
+    "leg-movement": {
+        "question" : "Will your robot use legs to move?",
+        "yes_nodes" : {
+            "Locomotion System" : {
+                "Leg Movement System" : {
+                    "Leg Servo Motors" : {},
+                    "Leg Motor Controllers" : {},
+                    "Leg Control System" : {
+                        "Powerful Processing Unit" : {}
+                    },
+                    "Balance System" : {
+                        "Acceleromenters" : {},
+                        "Gyroscopes" : {},
+                        "Balance Control System" : {
+                            "Powerful Processing Unit" : {}
+                        }
+                    }
+                }
+            }
+        },
+        "no_nodes" : {},
+        "yes_next_question" : "navigation-system",
+        "no_next_question" : "flight-movement"
+    },
+
+    "flight-movement": {
+        "question" : "Will your robot fly to move?",
+        "yes_nodes" : {
+            "Locomotion System" : {
+                "Flight System" : {
+                    "Propulsion System" : {
+                        "Propulsion Motors" : {},
+                        "Propellers" : {}
+                    },
+                    "Flight Control System" : {
+                        "Flight Controller" : {},
+                        "Flight Stabilization System" : {
+                            "Altitude Sensor" : {},
+                            "IMU" : {}
+                        }
+                    },
+                    "Navigation System" : {
+                        "GPS" : {}
+                    },
+                    "Obstacle Avoidance System" : {
+                        "Ultrasonic Sensor" : {},
+                        "LIDAR" : {}
+                    },
+                    "Airframe" : {
+                        "Lightweight Materials" : {},
+                        "Aerodynamic Design" : {}
+                    }
+                }
+            }
+        },
+        "no_nodes" : {},
+        "yes_next_question" : "navigation-system",
+        "no_next_question" : "swim-movement"
+    },
+
+    "swim-movement": {
+        "question" : "Will your robot swim to move?",
+        "yes_nodes" : {
+            "Locomotion System" : {
+                "Swimming System" : {
+                    "Waterproof Materials" : {},
+                    "Waterproof Design" : {},
+                    "Buoyancy Controller" : {}
+                }
+            }
+        },
+        "no_nodes" : {
+            "Locomotion System" : {
+                "Unknown Systems" : {}
+            }
+        },
+        "yes_next_question" : "rotating-propeller-swimming",
+        "no_next_question" : "navigation-system"
+    },
+
+    "rotating-propeller-swimming": {
+        "question" : "Will your robot use rotating propellers to swim?",
+        "yes_nodes" : {
+            "Swimming System" : {
+                "Propellers" : {},
+                "Propeller Motors" : {},
+                "Propeller Motor Controllers" : {}
+            }
+        },
+        "no_nodes" : {},
+        "yes_next_question" : "navigation-system",
+        "no_next_question" : "fin-swimming"
+    },
+
+    "fin-swimming": {
+        "question" : "Will your robot use fins to swim?",
+        "yes_nodes" : {
+            "Swimming System" : {
+                "Fin Servo Motors" : {},
+                "Fin Motor Controllers" : {},
+                "Fin Control System" : {
+                    "Powerful Processing Unit" : {}
+                }
+            }
+        },
+        "no_nodes" : {
+            "Swimming System" : {
+                "Unknown Swimming System" : {}
+            }
+        },
+        "yes_next_question" : "navigation-system",
+        "no_next_question" : "navigation-system"
+    },
+
+    "navigation-system": {
+        "question" : "Does your robot need to navigate autonomously?",
+        "yes_nodes" : {
+            "Locomotion System" : {
+                "Navigation System" : {
+                    "Visual Odometry" : {},
+                    "Camera" : {},
+                    "Powerful Processing Unit" : {}
+                }
+            }
+        },
+        "no_nodes" : {},
+        "yes_next_question" : "obstacle-avoidance",
+        "no_next_question" : "obstacle-avoidance"
+    },
+
+    "obstacle-avoidance": {
+        "question" : "Do you need the robot to avoid obstacles?",
+        "yes_nodes" : {
+            "Locomotion System" : {
+                "Obstacle Avoidance System" : {}
+            }
+        },
+        "no_nodes" : {},
+        "yes_next_question" : "precise-obstacle-avoidance",
+        "no_next_question" : "object-manipulation"
+    },
+
+    "precise-obstacle-avoidance": {
+        "question" : "Does the obstacle avoidance system need to be precise?",
+        "yes_nodes" : {},
+        "no_nodes" : {
+            "Obstacle Avoidance System" : {
+                "Ultrasonic Sensor" : {},
+                "Processing Unit" : {}
+            }
+        },
+        "yes_next_question" : "long-range-obstacle-avoidance",
+        "no_next_question" : "object-manipulation"
+    },
+
+    "long-range-obstacle-avoidance": {
+        "question" : "Does the obstacle avoidance system need to be operate at long range?",
+        "yes_nodes" : {
+            "Obstacle Avoidance System" : {
+                "LIDAR" : {},
+                "Powerful Processing Unit" : {}
+            }
+        },
+        "no_nodes" : {
+            "Obstacle Avoidance System" : {
+                "Infra-Red Sensor" : {},
+                "Processing Unit" : {}
+            }
+        },
+        "yes_next_question" : "object-manipulation",
+        "no_next_question" : "object-manipulation"
+    },
+
+    "object-manipulation": {
+        "question" : "Does your robot need to manipulate objects?",
+        "yes_nodes" : {
+            "Object Manipulation System" : {}
+        },
+        "no_nodes" : {},
+        "yes_next_question" : "precise-manipulation",
+        "no_next_question" : "communication"
+    },
+
+    "precise-manipulation": {
+        "question" : "Does the manipulator need to perform precise movements?",
+        "yes_nodes" : {
+            "Object Manipulation System" : {
+                "Precise Gripper Motors" : {},
+                "Gripper Motor Encoders" : {},
+                "Gripper Motor Controller" : {}
+            }
+        },
+        "no_nodes" : {
+            "Object Manipulation System" : {
+                "Gripper Motors" : {},
+                "Gripper Motor Encoders" : {},
+                "Gripper Motor Controller" : {}
+            }
+        },
+        "yes_next_question" : "delicate-manipulation",
+        "no_next_question" : "communication"
+    },
+
+    "delicate-manipulation": {
+        "question" : "Does the manipulator need to handle fragile objects?",
+        "yes_nodes" : {
+            "Object Manipulation System" : {
+                "Soft Grippers" : {},
+                "Gripper Force Sensors" : {},
+                "Gripper Force Feedback System" : {}
+            }
+        },
+        "no_nodes" : {},
+        "yes_next_question" : "communication",
+        "no_next_question" : "communication"
+    },
+
+    "communication": {
+        "question" : "Does your robot need to communicate with other devices or systems?",
+        "yes_nodes" : {
+            "Communication System" : {
+                "Processing Unit" : {},
+                "Communication Protocol" : {}
+            }
+        },
+        "no_nodes" : {},
+        "yes_next_question" : "wireless-communication",
+        "no_next_question" : "environment"
+    },
+
+    "wireless-communication": {
+        "question" : "Does the communication need to be wireless?",
+        "yes_nodes" : {
+            "Communication System" : {
+                "Antenna" : {}
+            }
+        },
+        "no_nodes" : {},
+        "yes_next_question" : "bluetooth-communication",
+        "no_next_question" : "environment"
+    },
+
+    "bluetooth-communication": {
+        "question" : "Will the robot use bluetooth for communication?",
+        "yes_nodes" : {
+            "Communication System" : {
+                "Bluetooth Module" : {}
+            }
+        },
+        "no_nodes" : {},
+        "yes_next_question" : "internet-communication",
+        "no_next_question" : "internet-communication"
+    },
+
+    "internet-communication": {
+        "question" : "Does the robot also need to connect to the internet?",
+        "yes_nodes" : {
+            "Communication System" : {
+                "Wi-Fi Module" : {}
+            }
+        },
+        "no_nodes" : {},
+        "yes_next_question" : "long-distance-communication",
+        "no_next_question" : "long-distance-communication"
+    },
+
+    "long-distance-communication": {
+        "question" : "Does the robot need communication over extremely long distances (over satellite)?",
+        "yes_nodes" : {
+            "Communication System" : {
+                "Satellite Communication Module" : {}
+            }
+        },
+        "no_nodes" : {},
+        "yes_next_question" : "environment",
+        "no_next_question" : "environment"
+    },
+
+    "environment": {
+        "question" : "Does your robot need to operate in harsh environments?",
+        "yes_nodes" : {
+            "Design for Environment" : {}
+        },
+        "no_nodes" : {},
+        "yes_next_question" : "waterproof",
+        "no_next_question" : "sound"
+    },
+
+    "waterproof": {
+        "question" : "Does the robot need to be waterproof?",
+        "yes_nodes" : {
+            "Design for Environment" : {
+                "Waterproof Sesign" : {}
+            }
+        },
+        "no_nodes" : {},
+        "yes_next_question" : "high-temperatures",
+        "no_next_question" : "high-temperatures"
+    },
+
+    "high-temperatures": {
+        "question" : "Does the robot need to withstand high temperatures?",
+        "yes_nodes" : {
+            "Design for Environment" : {
+                "Heat Resistant Materials" : {},
+                "Temperature Sensors" : {},
+                "Cooling Elements" : {},
+                "Cooling System" : {}
+            }
+        },
+        "no_nodes" : {},
+        "yes_next_question" : "dusty-environment",
+        "no_next_question" : "dusty-environment"
+    },
+
+    "dusty-environment": {
+        "question" : "Does the robot need to operate in dusty conditions?",
+        "yes_nodes" : {
+            "Design for Environment" : {
+                "Dustproof Design" : {}
+            }
+        },
+        "no_nodes" : {},
+        "yes_next_question" : "sound",
+        "no_next_question" : "sound"
+    },
+
+    "sound": {
+        "question" : "Does your robot need to make sound?",
+        "yes_nodes" : {
+            "Sound System" : {
+                "Speakers" : {},
+                "Processing Unit" : {},
+                "Audio Codec Chip" : {}
+            }
+        },
+        "no_nodes" : {},
+        "yes_next_question" : "talking",
+        "no_next_question" : "sound-input"
+    },
+
+    "talking": {
+        "question" : "Should your robot be able to talk?",
+        "yes_nodes" : {
+            "Sound System" : {
+                "Speech System" : {}
+            }
+        },
+        "no_nodes" : {},
+        "yes_next_question" : "scripted-talking",
+        "no_next_question" : "contextual-awareness"
+    },
+
+    "scripted-talking": {
+        "question" : "Does the robot need only scripted responses and informative language?",
+        "yes_nodes" : {
+            "Sound System" : {
+                "Speech System" : {
+                    "Simple Speech Algorithms" : {},
+                    "Preprogrammed Tree-type Responses" : {}
+                }
+            }
+        },
+        "no_nodes" : {},
+        "yes_next_question" : "contextual-awareness",
+        "no_next_question" : "llm-talking"
+    },
+
+    "llm-talking": {
+        "question" : "Are you going to use a pretrained LLM?",
+        "yes_nodes" : {
+            "Sound System" : {
+                "Speech System" : {
+                    "Pretrained LLM" : {},
+                    "Powerful Processing Unit" : {}
+                }
+            }
+        },
+        "no_nodes" : {
+            "Sound System" : {
+                "Speech System" : {
+                    "LLM" : {},
+                    "Huge Language Dataset" : {},
+                    "Powerful Processing Unit" : {},
+                    "Powerful Extrenal GPU for Training" : {}
+                }
+            }
+        },
+        "yes_next_question" : "retrain-llm",
+        "no_next_question" : "contextual-awareness"
+    },
+
+    "retrain-llm": {
+        "question" : "Are you going to retrain the LLM for your use case?",
+        "yes_nodes" : {
+            "Sound System" : {
+                "Speech System" : {
+                    "Huge Language Dataset" : {},
+                    "Powerful Extrenal GPU for Training" : {}
+                }
+            }
+        },
+        "no_nodes" : {},
+        "yes_next_question" : "contextual-awareness",
+        "no_next_question" : "contextual-awareness"
+    },
+
+    "contextual-awareness": {
+        "question" : "Does the robot need visual contextual awareness for sounds?",
+        "yes_nodes" : {
+            "Sound System" : {
+                "Camera" : {},
+                "Object Recognition System" : {},
+                "Powerful Processing Unit" : {}
+            }
+        },
+        "no_nodes" : {},
+        "yes_next_question" : "sound-input",
+        "no_next_question" : "sound-input"
+    },
+
+    "sound-input": {
+        "question" : "Should the robot be able to process sounds?",
+        "yes_nodes" : {
+            "Sound Processing System" : {
+                "Microphone" : {},
+                "Processing Unit" : {},
+                "Audio Codec Chip" : {}
+            }
+        },
+        "no_nodes" : {},
+        "yes_next_question" : "speech-input",
+        "no_next_question" : "human-interaction"
+    },
+
+    "speech-input": {
+        "question" : "Should the robot be able to process human speech?",
+        "yes_nodes" : {
+            "Sound Processing System": {
+                "Powerful Processing Unit" : {}
+            }
+        },
+        "no_nodes" : {},
+        "yes_next_question" : "alexa-input-model",
+        "no_next_question" : "human-interaction"
+    },
+
+    "alexa-input-model": {
+        "question" : "Is implementing existing language models enough like Alexa?",
+        "yes_nodes" : {
+            "Sound Processing System": {
+                "Wi-Fi Module" : {},
+                "Cloud-based Pretrained Speech Processing Model" : {}
+            }
+        },
+        "no_nodes" : {
+            "Sound Processing System": {
+                "Speech To Text Model" : {},
+                "Huge Speech Dataset" : {},
+                "Powerful External GPU for Training" : {}
+            }
+        },
+        "yes_next_question" : "human-interaction",
+        "no_next_question" : "human-interaction"
+    },
+
+    "human-interaction": {
+        "question" : "Does your robot interact with humans?",
+        "yes_nodes" : {},
+        "no_nodes" : {},
+        "yes_next_question" : "emotion-expression",
+        "no_next_question" : "end"
+    },
+
+    "emotion-expression": {
+        "question" : "Does your robot need to express emotions?",
+        "yes_nodes" : {
+            "Emotion System" : {}
+        },
+        "no_nodes" : {},
+        "yes_next_question" : "eye-emotion-expression",
+        "no_next_question" : "touch-sensitivity"
+    },
+
+    "eye-emotion-expression": {
+        "question" : "Does your robot need to express emotions with their eyes?",
+        "yes_nodes" : {
+            "Emotion System" : {
+                "Eye Expression System" : {}
+            }
+        },
+        "no_nodes" : {},
+        "yes_next_question" : "realistic-eyes",
+        "no_next_question" : "movement-emotion-expression"
+    },
+
+    "realistic-eyes": {
+        "question" : "Will the eyes of your robot be realistic?",
+        "yes_nodes" : {
+            "Eye Expression System" : {
+                "Realistic Eyes" : {},
+                "Precise Eye Servo Motors" : {},
+                "Gaze System" : {},
+                "Eye Contact System" : {},
+                "High Quality Camera" : {},
+                "Powerful Processing Unit" : {}
+            }
+        },
+        "no_nodes" : {
+            "Eye Expression System" : {
+                "Digital/Cartoony Eyes" : {},
+                "Eye Animations" : {},
+                "Processing Unit" : {}
+            }
+        },
+        "yes_next_question" : "movement-emotion-expression",
+        "no_next_question" : "movement-emotion-expression"
+    },
+
+    "movement-emotion-expression": {
+        "question" : "Does your robot need to express emotions through movement?",
+        "yes_nodes" : {
+            "Motion Expression System" : {
+                "Movement Animations" : {}
+            }
+        },
+        "no_nodes" : {},
+        "yes_next_question" : "touch-sensitivity",
+        "no_next_question" : "touch-sensitivity"
+    },
+
+    "touch-sensitivity": {
+        "question" : "Does your robot need touch sensitivity?",
+        "yes_nodes" : {
+            "Touch Sensitivity System" : {
+                "Touch Sensors" : {},
+                "Processing Unit" : {}
+            }
+        },
+        "no_nodes" : {},
+        "yes_next_question" : "disabilities",
+        "no_next_question" : "disabilities"
+    },
+
+    "disabilities": {
+        "question" : "Is the robot going to interact with people with disabilities?",
+        "yes_nodes" : {
+            "Design for Disabilities" : {}
+        },
+        "no_nodes" : {},
+        "yes_next_question" : "end",
+        "no_next_question" : "end"
+    },
+
+    "end": {
+        "question" : "Those were all the questions, you can also view the final graph as a png file in this directory.",
+        "yes_nodes" : {},
+        "no_nodes" : {},
+        "yes_next_question" : "end",
+        "no_next_question" : "end"
+    }
+}
