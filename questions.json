@@ -265,7 +265,7 @@
     },
 
     "obstacle-avoidance": {
-        "question" : "Do you need the robot to avoid obstacles?",
+        "question" : "Do you need the robot to avoid obstacles using other sensors than cameras?",
         "yes_nodes" : {
             "Locomotion System" : {
                 "Obstacle Avoidance System" : {}
@@ -277,7 +277,7 @@
     },
 
     "precise-obstacle-avoidance": {
-        "question" : "Does the obstacle avoidance system need to be precise?",
+        "question" : "Does the obstacle avoidance system need to be precise, or will ultrasound sufice?",
         "yes_nodes" : {},
         "no_nodes" : {
             "Obstacle Avoidance System" : {
@@ -498,7 +498,7 @@
             }
         },
         "no_nodes" : {},
-        "yes_next_question" : "contextual-awareness",
+        "yes_next_question" : "sound-input",
         "no_next_question" : "llm-talking"
     },
 
@@ -542,7 +542,7 @@
     },
 
     "contextual-awareness": {
-        "question" : "Does the robot need visual contextual awareness for sounds?",
+        "question" : "Does the system require multimodal capabilities (visual context) to aid the LLM?",
         "yes_nodes" : {
             "Sound System" : {
                 "Camera" : {},
